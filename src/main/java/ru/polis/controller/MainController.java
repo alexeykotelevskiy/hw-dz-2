@@ -59,7 +59,9 @@ public class MainController {
     @RequestMapping(value = "/list", method = RequestMethod.PUT)
     public int updateRecord(@RequestBody Record record, Model model)
     {
-        recordService.save(record);
+        if (record.checkValidate()) {
+            recordService.save(record);
+        }
         return record.getId();
     }
 
