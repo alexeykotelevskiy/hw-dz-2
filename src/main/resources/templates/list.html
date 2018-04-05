@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Список</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/default.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="scripts/bundle.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="list" th:each="elem : ${list}">
+        <div class="list-elem js-list-elem">
+            <form class="list-elem-form js-validating">
+                <div class="elem-field-container">
+                    <input class="feedback-input feedback-field small" name="name" placeholder="Name" th:value="${elem.name}" />
+                </div>
+                <div class="elem-field-container">
+                    <input class="feedback-input feedback-field small" name="email" placeholder="Email" th:value="${elem.email}" />
+
+                </div>
+                <div class="elem-field-container">
+                    <input class="feedback-input feedback-field small" name="title" placeholder="Title" th:value="${elem.title}" />
+                </div>
+                <div class="elem-field-container">
+                    <textarea class="feedback-field list-textarea big" placeholder="Your Comment" name="comment" th:text="${elem.comment}"></textarea>
+                </div>
+                <input type="hidden" name="id" th:value="${elem.id}" />
+                <div class="list-buttons">
+                    <button type="submit" class="blue-button js-save">SAVE</button>
+                    <button type="reset" class="blue-button js-delete">DELETE</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

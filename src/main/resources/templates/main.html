@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Добавление</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/default.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="scripts/bundle.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <a href="/list">Список</a>
+    <h1 class="title">Need a Project?</h1>
+    <div class="description">Let us know what you're looking for in an agency. We'll take a look and see
+        if this could be the start of something beautiful.</div>
+    <form action="#" th:action="@{/list}" method="post" th:object="${record}" class="feedback-form js-validating" data-show-messages="false" data-show-top="false" enctype="multipart/form-data">
+        <div class="feedback-row-fields">
+            <input type="text" class="feedback-input small feedback-field" placeholder="Your Name" th:field="*{name}" name="name"/>
+            <input type="text" class="feedback-input small feedback-field" placeholder="Your Email" th:field="*{email}" name="email"/>
+        </div>
+        <div class="feedback-row-fields">
+            <input type="text" class="feedback-input big feedback-field" placeholder="Your title" th:field="*{title}" name="title"/>
+        </div>
+        <div class="feedback-row-fields">
+            <textarea class="feedback-textarea big feedback-field" placeholder="Your Comment" name="comment" th:field="*{comment}"></textarea>
+        </div>
+        <div class="feedback-submit-container">
+            <button type="submit" class="blue-button js-save disable-button">SEND MESSAGE</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
