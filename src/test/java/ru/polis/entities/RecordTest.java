@@ -27,7 +27,7 @@ public class RecordTest {
         return list;
     }
 
-    public List<Record> geInvalidEmailsRecords(){
+    public List<Record> getInvalidEmailsRecords(){
         List<Record> list = new ArrayList<>();
         for (int i=0;i<invalidEmails.length;i++) {
             Record r = new Record();
@@ -75,7 +75,7 @@ public class RecordTest {
     @Test
     public void checkValidate2(){
 
-        List<Record> list = getInvalidNamesRecords();
+        List<Record> list = getInvalidEmailsRecords();
         for (int i=0;i<list.size();i++) {
             assertFalse(list.get(i).checkValidate());
         }
