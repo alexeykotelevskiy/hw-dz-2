@@ -96,7 +96,7 @@ public class Record implements Serializable, Comparable<Record>{
     public boolean checkValidate(){
         boolean emailValid = EmailValidator.getInstance().isValid(getEmail());
         boolean nameValid = checkWithRegExp(getName());
-        return getEmail().length() > 0 && getName().length() > 0 && emailValid && nameValid;
+        return getEmail().length() > 0 && getName().length() > 0 && emailValid && nameValid && getName().length() <=30;
     }
 
 
