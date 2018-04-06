@@ -1,0 +1,42 @@
+.list-elem{
+  margin: 20px;
+  max-height: 500px;
+}
+
+.elem-field-container{
+  margin-bottom: 20px;
+}
+.list-textarea{
+  height: 170px;
+  resize: none;
+}
+
+.list-elem-form{
+  border: solid 1px black;
+  padding: 10px;
+}
+
+.deleting{
+  max-height: 0;
+  overflow: hidden;
+  transition:  max-height 0.5s ;
+}
+
+.input-error{
+  color: red;
+  font-size: 12pt;
+  margin-left: 20px;
+}
+.top-message{
+  top: 0;
+  left: 0;
+  background-color: #228B22;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+  height: 40px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
