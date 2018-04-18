@@ -78,6 +78,20 @@
                     <encoding>${project.encoding}</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+
+
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>ru.polis.ApplicationLauncher</mainClass>
+                    <arguments>
+                        <argument>argument1</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
